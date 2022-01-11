@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Anagrama</title>
 </head>
 
 <body>
@@ -16,7 +16,42 @@
         */
         function isAnagram(test, original) {
             // implementar logica aqui
-            return ""
+            let testMaiusculo = test.toUpperCase();
+            let originalMaiusculo = original.toUpperCase();
+            
+            if(testMaiusculo.length != originalMaiusculo.length){
+                return false;
+            }
+            else{
+
+                //separando a string em um vetor
+                let testVetor = testMaiusculo.split('');
+                let originalVetor = originalMaiusculo.split('');
+    
+                //console.log(testVetor);
+                //console.log(originalVetor);
+                
+                //ordenando o vetor em ordem alfabética
+                let testOrdenado = testVetor.sort();
+                let originalOrdenado = originalVetor.sort();
+    
+                //console.log(testOrdenado);
+                //console.log(originalOrdenado);
+    
+                //voltando de vetor para string
+                let testFinal = testOrdenado.join('');
+                let originalFinal = originalOrdenado.join('');
+    
+                //console.log(testFinal);
+                //console.log(originalFinal);
+               
+                if(testFinal==originalFinal){
+                    return true;
+                }
+                else{
+                    return false;
+                }   
+            }
         }
 
         // Resultados esperados
